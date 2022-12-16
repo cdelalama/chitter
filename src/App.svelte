@@ -3,7 +3,7 @@
 	import Header from "./components/Header.svelte";
 	import Aside from "./components/Aside.svelte";
 	import NewChit from "./components/NewChit.svelte";
-	import AllChits from "./components/Chit.svelte";
+	import AllChits from "./components/AllChits.svelte";
 </script>
 
 <div id="app-container" class="app-container">
@@ -16,7 +16,7 @@
 				<NewChit />
 				<AllChits />
 			</main>
-			<Aside />
+			<!--<Aside /> -->
 		</div>
 	</section>
 </div>
