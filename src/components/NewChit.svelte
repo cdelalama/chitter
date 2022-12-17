@@ -1,14 +1,9 @@
 <script>
 	import { ChitStore } from "../stores/ChitStore";
-	import {  onDestroy } from "svelte";
 
 	let newChitValue;
-	let allChits;
-	let chitStoreUnsub = ChitStore.subscribe((data) => (allChits = data));
 
-	onDestroy(() => {
-		chitStoreUnsub();
-	});
+
 	function createChit() {
 		//console.log(newChit);
 		let newChit = {
@@ -17,7 +12,7 @@
 			content: newChitValue,
 			handle: "@blah",
 		};
-		ChitStore.set([...allChits, newChit]);
+		ChitStore.addNewChit(newChit);
 	}
 </script>
 

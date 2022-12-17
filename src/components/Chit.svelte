@@ -1,10 +1,11 @@
 <script>
+	export let id;
 	export let content;
 	export let author;
 	export let handle;
 </script>
 
-<div class="chit">
+<div class="chit" id="chit-{id}">
 	<div class="author">{author}</div>
 	<div class="handle">{handle}</div>
 	<div class="chit-content">
