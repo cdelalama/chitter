@@ -3,7 +3,6 @@
 
 	let newChitValue;
 
-
 	function createChit() {
 		//console.log(newChit);
 		let newChit = {
@@ -11,6 +10,7 @@
 			author: "Blah",
 			content: newChitValue,
 			handle: "@blah",
+			likes: 0,
 		};
 		ChitStore.addNewChit(newChit);
 	}

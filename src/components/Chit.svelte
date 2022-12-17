@@ -1,8 +1,15 @@
 <script>
+	import { ChitStore } from "../stores/ChitStore";
 	export let id;
 	export let content;
 	export let author;
 	export let handle;
+	export let likes;
+
+	function onLike(id) {
+		console.log("Liked ", id);
+		ChitStore.likeChit(id);
+	}
 </script>
 
 <div class="chit" id="chit-{id}">
@@ -13,7 +20,10 @@
 	</div>
 	<div class="chit-meta">
 		<div class="rechit"><i class="fa-solid fa-retweet" /> 2</div>
-		<div class="like"><i class="fa-solid fa-thumbs-up" /> 10</div>
+		<div class="like" on:click={() => onLike(id)}>
+			<i class="fa-solid fa-thumbs-up" />
+			{likes}
+		</div>
 		<div class="save"><i class="fa-solid fa-share-alt" /></div>
 		<div class="delete"><i class="fa-solid fa-trash" /></div>
 	</div>
