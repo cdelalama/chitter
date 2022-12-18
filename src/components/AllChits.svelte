@@ -6,9 +6,10 @@
 	let allChits;
 	let chitStoreUnsub = ChitStore.subscribe((data) => (allChits = data));
 
-	// onMount(() => {
-	//     console.log("Component Mounted")
-	//  })
+	onMount(() => {
+		console.log("Component Mounted");
+		ChitStore.loadChits();
+	});
 
 	onDestroy(() => {
 		chitStoreUnsub();

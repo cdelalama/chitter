@@ -1,10 +1,10 @@
-export function fetchChits() {
+export async function fetchChits() {
 	console.log("[b] Fetching all chits");
 
-	return [
-		{ id: 1, author: "Nauman", handle: "@recluze", content: "First", likes: 0 },
-		{ id: 2, author: "Blah", handle: "@recluze", content: "Second", likes: 0 },
-	];
+	const response = await fetch("http://localhost:3000/chits");
+	const data = await response.json();
+	console.log("[b] Data: ", data);
+	return data;
 }
 
 export function incLike(id) {
