@@ -3,7 +3,7 @@ export async function fetchChits() {
 
 	const response = await fetch("http://localhost:3000/chits");
 	const data = await response.json();
-	console.log("[b] Data: ", data);
+	//console.log("[b] Data: ", data);
 	return data;
 }
 
