@@ -10,18 +10,22 @@ function createChitStore() {
 			update((e) => [...e, newChit]);
 		},
 		likeChit: (id) => {
+			let newCount = 1;
 			update((pastChits) => {
 				pastChits.map((chit) => {
-					if (chit.id == id) chit.likes += 1;
+					if (chit.id == id) {
+						chit.likes += 1;
+						newCount = chit.likes;
+					}
 				});
-				incLike(id);
+				incLike(id, newCount);
 				return pastChits;
 			});
 		},
-			loadChits: async () => {
-				let data = await fetchChits();
-				set(data);
-			}
+		loadChits: async () => {
+			let data = await fetchChits();
+			set(data);
+		},
 	};
 }
 
